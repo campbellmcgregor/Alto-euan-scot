@@ -5,8 +5,15 @@
     height: 24px;
     cursor: pointer;
     user-select: none;
-    background-color: var(--dark-gray-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0, 240, 255, 0.2);
+    transition: var(--transition-base);
+}
+
+.toggle-track:hover {
+    box-shadow: 0 2px 12px rgba(0, 240, 255, 0.3);
+    transform: scale(1.05);
 }
 
 .toggle-sun,
@@ -16,6 +23,8 @@
     justify-content: center;
     width: 50%;
     color: var(--white-color);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 .toggle-moon {
@@ -33,11 +42,48 @@
     left: 2px;
     width: 20px;
     height: 20px;
-    background-color: var(--white-color);
+    background: var(--white-color);
     border-radius: 50%;
-    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
+}
+
+.toggle-thumb::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-accent);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.toggle-track:hover .toggle-thumb::after {
+    opacity: 0.3;
+}
+
+.dark-mode .toggle-track {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    box-shadow: 0 2px 8px rgba(255, 46, 199, 0.2);
+}
+
+.dark-mode .toggle-track:hover {
+    box-shadow: 0 2px 12px rgba(255, 46, 199, 0.3);
 }
 
 .dark-mode .toggle-thumb {
     transform: translateX(21px);
+    background: var(--dark-mode-bg-color);
+}
+
+.dark-mode .toggle-sun {
+    opacity: 0.3;
+}
+
+.dark-mode .toggle-moon {
+    opacity: 1;
 }

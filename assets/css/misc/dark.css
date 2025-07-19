@@ -17,7 +17,12 @@
 .dark-mode .canvas-close,
 .dark-mode .author-social-item:hover,
 .dark-mode .error-code,
-.dark-mode .menu-item-link:hover,
+.dark-mode .menu-item-link:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+.dark-mode .canvas-close:hover,
 .dark-mode .kg-bookmark-title,
 .dark-mode .kg-bookmark-author,
 .dark-mode .kg-bookmark-publisher {
@@ -60,12 +65,90 @@
     border-color: var(--dark-mode-border-color);
 }
 
+/* Enhanced Dark Mode Styling */
+.dark-mode a:not(.menu-item-link):not(.post-tag):not(.kg-btn):not(.kg-nft-card-container):not(.kg-product-card-button):not(.kg-header-card-button) {
+    color: var(--primary-color);
+    transition: var(--transition-base);
+}
+
+.dark-mode a:not(.menu-item-link):not(.post-tag):not(.kg-btn):not(.kg-nft-card-container):not(.kg-product-card-button):not(.kg-header-card-button):hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(255, 46, 199, 0.3);
+}
+
+/* Gradient accents for headings */
+.dark-mode .logo-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Enhanced buttons and interactive elements */
+.dark-mode button,
+.dark-mode .kg-btn,
+.dark-mode .kg-product-card-button,
+.dark-mode .kg-header-card-button {
+    background: var(--gradient-primary);
+    color: var(--dark-mode-bg-color);
+    border: none;
+    box-shadow: var(--shadow-base);
+    transition: var(--transition-base);
+}
+
+.dark-mode button:hover,
+.dark-mode .kg-btn:hover,
+.dark-mode .kg-product-card-button:hover,
+.dark-mode .kg-header-card-button:hover {
+    background: var(--gradient-accent);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+/* Post tags with modern styling */
+.dark-mode .post-tag {
+    background-color: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    color: var(--primary-color);
+    transition: var(--transition-base);
+}
+
+.dark-mode .post-tag:hover {
+    background-color: rgba(0, 240, 255, 0.2);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
 .dark-mode .comment-container,
 .dark-mode .u-placeholder,
 .dark-mode pre,
 .dark-mode :not(pre) > code,
 .dark-mode .kg-header-card.kg-style-light {
     background-color: var(--dark-mode-darker-bg-color);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+/* Code blocks with subtle gradient border */
+.dark-mode pre {
+    position: relative;
+    overflow: hidden;
+}
+
+.dark-mode pre::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.dark-mode pre:hover::before {
+    opacity: 0.1;
 }
 
 .dark-mode .gh-head,
@@ -74,7 +157,9 @@
 }
 
 .dark-mode .sep::after {
-    background-color: var(--dark-mode-border-color);
+    background: var(--gradient-primary);
+    height: 2px;
+    opacity: 0.3;
 }
 
 .dark-mode .u-text-format ol li::before {
@@ -82,7 +167,9 @@
 }
 
 .dark-mode blockquote {
-    border-color: var(--white-color);
+    border-left: 3px solid var(--secondary-color);
+    background: linear-gradient(90deg, rgba(255, 46, 199, 0.05) 0%, transparent 100%);
+    padding-left: 1.5em;
 }
 
 .dark-mode button {
