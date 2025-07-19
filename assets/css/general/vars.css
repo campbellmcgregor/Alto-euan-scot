@@ -1,6 +1,6 @@
 :root {
     /* Primary Colors - Cyberpunk Scottish Thistle Theme */
-    --primary-color: var(--ghost-accent-color, #00F0FF); /* Thistle Blue */
+    --primary-color: #00F0FF; /* Thistle Blue - Override Ghost accent color */
     --secondary-color: #FF2EC7; /* Cyber Fuchsia */
     --accent-color: #9A00FF; /* Electric Violet */
     --tertiary-color: #72FFD8; /* Pale Neon Green */

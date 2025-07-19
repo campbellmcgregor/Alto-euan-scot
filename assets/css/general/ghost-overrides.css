@@ -1,0 +1,41 @@
+/* Ghost Accent Color Overrides - Force our cyberpunk thistle theme */
+
+/* Override all Ghost accent color references */
+blockquote:not([class]) {
+    border-left: 4px solid var(--primary-color);
+}
+
+:not(pre) > code {
+    color: var(--primary-color);
+}
+
+.gh-head-btn:not(.gh-btn) {
+    color: var(--primary-color);
+}
+
+.gh-article-tag {
+    color: var(--primary-color);
+}
+
+.gh-content a {
+    color: var(--primary-color);
+}
+
+.gh-primary-btn {
+    background-color: var(--primary-color);
+}
+
+/* Override Ghost's brand header styles */
+.is-head-brand:not(.is-head-transparent) .gh-head {
+    background-color: var(--primary-color);
+}
+
+.is-head-open.is-head-transparent .gh-head,
+.is-head-open:is(.is-head-transparent, .is-head-brand) .gh-head .gh-head-actions {
+    background-color: var(--primary-color);
+}
+
+/* Ensure our colors take precedence in all contexts */
+:root {
+    --ghost-accent-color: var(--primary-color) !important;
+}
